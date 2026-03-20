@@ -77,13 +77,29 @@ function App() {
   const [collection, setCollection] = useState<number[]>([]);
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [view, setView] = useState<"all" | "collection">("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const collectionGames = useMemo(
     () => gameData.filter((game) => collection.includes(game.id)),
     [collection]
   );
 
-  const displayGames = view === "collection" ? collectionGames : gameData;
+  const baseGames = view === "collection" ? collectionGames : gameData;
+
+  const filteredGames = useMemo(
+    () =>
+      baseGames.filter((game) => {
+        const query = searchQuery.toLowerCase();
+            return (
+              game.title.toLowerCase().includes(query) ||
+              game.players.toLowerCase().includes(query) ||
+              game.duration.toLowerCase().includes(query)
+            );
+      }),
+    [baseGames, searchQuery]
+  );
+
+  const displayGames = filteredGames;
 
   const addOrRemove = (game: Game) => {
     setCollection((current) =>
@@ -108,28 +124,13 @@ function App() {
 
   return (
     <main>
-      <Header />
-
-      <section className="profile-panel">
-        {profileName ? (
-          <>
-            <p>Welcome, <strong>{profileName}</strong>!</p>
-            <button className="ghost" onClick={signOut}>
-              Sign out
-            </button>
-            <p>Saved games: {collection.length}</p>
-          </>
-        ) : (
-          <div className="profile-form">
-            <input
-              value={profileDraft}
-              onChange={(e) => setProfileDraft(e.target.value)}
-              placeholder="Create profile name"
-            />
-            <button onClick={createProfile}>Create Profile</button>
-          </div>
-        )}
-      </section>
+      <Header
+        profileName={profileName}
+        profileDraft={profileDraft}
+        onProfileDraftChange={setProfileDraft}
+        onCreateProfile={createProfile}
+        onSignOut={signOut}
+      />
 
       <section className="view-tabs">
         <button
@@ -147,10 +148,22 @@ function App() {
         </button>
       </section>
 
+      <section className="search-section">
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search by title, players, or time..."
+          className="search-input"
+        />
+      </section>
+
       {view === "collection" && !profileName ? (
         <p className="notice">Create a profile first to start saving games.</p>
       ) : view === "collection" && collectionGames.length === 0 ? (
         <p className="notice">No games in your collection yet. Add some from All Games.</p>
+      ) : displayGames.length === 0 ? (
+        <p className="notice">No games match your search.</p>
       ) : null}
 
       <section className="game-grid">

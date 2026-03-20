@@ -46,7 +46,22 @@ header,
   background: var(--card);
   border: 1px solid #2b3956;
   border-radius: 12px;
-  padding: 0.85rem 1rem;
+}
+
+.main-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.profile-name {
+  color: var(--accent-2);
+  font-weight: 500;
 }
 
 .profile-form {
@@ -55,10 +70,11 @@ header,
   gap: 0.5rem;
 }
 
-.profile-form input,
-.profile-form button,
-button {
-  font: inherit;
+header,
+.view-tabs,
+.notice,
+.game-grid {
+  margin-bottom: 1rem;
 }
 
 .profile-form input,
@@ -73,6 +89,7 @@ button.ghost,
   color: var(--text);
   cursor: pointer;
   transition: all 200ms ease;
+  font: inherit;
 }
 
 .profile-form input {
@@ -119,7 +136,7 @@ button.ghost {
 
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1rem;
 }
 
