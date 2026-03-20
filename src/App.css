@@ -17,7 +17,12 @@
 
 body {
   margin: 0;
-  font-family: Inter, Segoe UI, system-ui, -apple-system, sans-serif;
+  font-family:
+    Inter,
+    Segoe UI,
+    system-ui,
+    -apple-system,
+    sans-serif;
   background: radial-gradient(circle at 20% 10%, #1b2335 0%, #0f1118 60%);
   color: var(--text);
 }
@@ -70,12 +75,6 @@ header,
 }
 
 .profile-form input,
-.profile-form button,
-button {
-  font: inherit;
-}
-
-.profile-form input,
 .game-body button,
 .detail-actions button,
 button.ghost,
@@ -87,6 +86,7 @@ button.ghost,
   color: var(--text);
   cursor: pointer;
   transition: all 200ms ease;
+  font: inherit;
 }
 
 .profile-form input {
@@ -122,7 +122,11 @@ button.ghost {
 }
 
 .view-tabs .active {
-  background: linear-gradient(137deg, rgba(45, 157, 95, 0.96), rgba(74, 222, 128, 0.9));
+  background: linear-gradient(
+    137deg,
+    rgba(45, 157, 95, 0.96),
+    rgba(74, 222, 128, 0.9)
+  );
   color: #06101c;
   border-color: #1fa068;
 }
@@ -366,4 +370,3 @@ button.ghost {
     grid-template-columns: 1fr;
   }
 }
-
