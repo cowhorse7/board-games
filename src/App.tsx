@@ -85,7 +85,7 @@ const gameData: Game[] = [
     summary: "Collect gems and build a merchant empire.",
     detail:
       "Purchase gem tokens to acquire cards and attract nobles. Race to reach prestige points while managing limited resources strategically.",
-    image: "https://images.unsplash.com/photo-1627362180015-1982d196f2fd?auto=format&fit=crop&w=800&q=80",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/376680/capsule_616x353.jpg?t=1742483733",
   },
   {
     id: 7,
@@ -97,7 +97,7 @@ const gameData: Game[] = [
     summary: "Build the best deck of cards in this deck-building classic.",
     detail:
       "Use your hand to buy better cards for your deck. Exploit card combos and strategic sequencing to outpace opponents. Endless card variety.",
-    image: "https://cf.geekdo-images.com/3nNhLDr5PAzXPDMBKBERBw__medium/img/h1YUG--aMH0pLKlrDhc4-V_Pp4U=/fit-in/500x500/filters:strip_webp()/pic1217529.jpg",
+    image: "https://img.pastemagazine.com/wp-content/uploads/2022/06/21074637/dominion-card-game-main.jpg",
   },
   {
     id: 8,
@@ -109,7 +109,7 @@ const gameData: Game[] = [
     summary: "Build a medieval landscape tile by tile.",
     detail:
       "Draw and place tiles to form cities, roads, and monasteries. Strategic placement and follower scoring create engaging spatial puzzles.",
-    image: "https://upload.wikimedia.org/wikipedia/en/3/38/Carcassonne_base_game_box.jpg",
+    image: "https://boardgamestrategy.blog/wp-content/uploads/2016/12/carcassone2.jpg?w=640",
   },
   {
     id: 9,
@@ -121,7 +121,7 @@ const gameData: Game[] = [
     summary: "Build civilizations in parallel with simultaneous card drafting.",
     detail:
       "Draft cards to develop military, scientific, and commercial strengths while building your civilization's Wonder. Quick gameplay despite depth.",
-    image: "https://cf.geekdo-images.com/yfYEscsyvtKH-RkByLGr1A__medium/img/K1HaLcFYnVtEyQdPrmqBpM2a6sE=/fit-in/500x500/filters:strip_webp()/pic1642849.jpg",
+    image: "https://b1803394.smushcdn.com/1803394/wp-content/uploads/2020/08/7-wonders-review-header-990x557.jpg?lossy=1&strip=1&webp=1",
   },
   {
     id: 10,
@@ -133,7 +133,7 @@ const gameData: Game[] = [
     summary: "Build and manage a sustainable farm over 14 rounds.",
     detail:
       "Place workers on action spaces to develop crops, livestock, and family. Balance expansion with resource management for long-term success.",
-    image: "https://cf.geekdo-images.com/MYJxWZHy_ysqM1VHG48EJw__medium/img/Xq7gGaVYb-Yk8sYJvvPJJU6_m74=/fit-in/500x500/filters:strip_webp()/pic1406785.jpg",
+    image: "https://www.gaminglib.com/cdn/shop/products/agricola-the-15th-anniversary-edition-746664.jpg?v=1753955273&width=300",
   },
   {
     id: 11,
@@ -145,7 +145,7 @@ const gameData: Game[] = [
     summary: "Give one-word clues to reveal secret agents.",
     detail:
       "Teams compete to identify agents by interpreting cryptic clues. Creative wordplay and deduction make every game unpredictable and fun.",
-    image: "https://cf.geekdo-images.com/W3sfMfH84s5Z9kDMGI-98Q__medium/img/wI0wnpMjHAr5AXr6w5mVZ_oe7s0=/fit-in/500x500/filters:strip_webp()/pic3483769.jpg",
+    image: "https://www.thebearandthefox.com/wp-content/uploads/2020/11/Codenames-Game-Review-650x488.jpg",
   },
   {
     id: 12,
@@ -157,7 +157,7 @@ const gameData: Game[] = [
     summary: "Build your bird sanctuary with beautiful cards and engines.",
     detail:
       "Play bird cards to create habitats and build card-playing engines. Learn about real species while competing for conservation goals.",
-    image: "https://cf.geekdo-images.com/x0uA5EjJe3c9gVwXdmLmSg__medium/img/C0xOXCpkwSEPBUFJ8gA0RrVTkgg=/fit-in/500x500/filters:strip_webp()/pic4458123.jpg",
+    image: "https://www.moxboardinghouse.com/cdn/shop/files/2f47c01cWingspan-Mox-Boarding-House-Seattle.jpg?v=1753817274",
   },
   {
     id: 13,
@@ -169,7 +169,7 @@ const gameData: Game[] = [
     summary: "Banish sad trees and build a magical woodland community.",
     detail:
       "Gather resources in an enchanted forest and play creature cards to grow your grove. Whimsical art meets elegant worker placement.",
-    image: "https://cf.geekdo-images.com/4wzYVN4_SkOGWWf9qNMx3g__medium/img/Sw2zzHarNXokCXxPr8pUNzB0hMk=/fit-in/500x500/filters:strip_webp()/pic3918151.jpg",
+    image: "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000056698/8014e07ef1fb7f6cd0e9bec07ff2c9a4df456f1b606b3d812bd735020432001b",
   },
   {
     id: 14,
@@ -181,7 +181,7 @@ const gameData: Game[] = [
     summary: "Race across European railways claiming iconic routes.",
     detail:
       "Strategic railway expansion from revised, expanded map. More blocking opportunities and tunnel routes add depth to the classic formula.",
-    image: "https://cf.geekdo-images.com/8dAn_0Z_Tb-rU9tWkVgpwQ__medium/img/K8Fa0KqvdXgN8qCT-RKWdAx3wJg=/fit-in/500x500/filters:strip_webp()/pic1224405.jpg",
+    image: "https://www.boardgamequest.com/wp-content/uploads/2013/12/Ticket-To-Ride-Europe.jpg",
   },
   {
     id: 15,
@@ -193,7 +193,7 @@ const gameData: Game[] = [
     summary: "Rapid-fire social deduction bluffing game.",
     detail:
       "Identify werewolves in real-time debate with role abilities changing each round. Perfect filler for groups wanting quick thrills and laughs.",
-    image: "https://cf.geekdo-images.com/8R-cblR4Q0CjVlRbcNXAIw__medium/img/0d20-E1-tQUVqX7j7yJlvW06EQ=/fit-in/500x500/filters:strip_webp()/pic1734135.jpg",
+    image: "https://www.boardgamesdallas.com/cdn/shop/products/pic1809823_580x.jpg?v=1588350344",
   },
 ];
 
