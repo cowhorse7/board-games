@@ -46,6 +46,7 @@ header,
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 0.85rem 1.2rem;
   background: var(--card);
@@ -60,6 +61,8 @@ header,
 .profile-section {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 0.75rem;
 }
 
@@ -75,6 +78,7 @@ header,
 }
 
 .profile-form input,
+.profile-form button,
 .game-body button,
 .detail-actions button,
 button.ghost,
@@ -92,7 +96,7 @@ button.ghost,
 .profile-form input {
   background: #121a2d;
   color: var(--text);
-  width: 220px;
+  width: clamp(160px, 30vw, 220px);
   border: 1px solid #2e4062;
 }
 
@@ -110,6 +114,7 @@ button.ghost {
 
 .view-tabs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
   padding: 0 1.2rem;
@@ -117,8 +122,9 @@ button.ghost {
 }
 
 .view-tabs button {
-  flex: 0 0 33.33vw;
-  width: 33.33vw;
+  flex: 0 1 auto;
+  width: min(33.33vw, 320px);
+  min-width: 150px;
 }
 
 .view-tabs .active {
@@ -135,6 +141,7 @@ button.ghost {
   padding: 0 1.2rem;
   margin-bottom: 1rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
   justify-content: center;
@@ -359,6 +366,10 @@ button.ghost {
 @media (max-width: 900px) {
   .detail-card {
     grid-template-columns: 1fr;
+  }
+
+  .view-tabs button {
+    width: min(46vw, 260px);
   }
 
   .game-card:hover {

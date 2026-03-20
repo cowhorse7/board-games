@@ -78,7 +78,7 @@ const gameData: Game[] = [
     summary: "Collect gems and build a merchant empire.",
     detail:
       "Purchase gem tokens to acquire cards and attract nobles. Race to reach prestige points while managing limited resources strategically.",
-    image: "https://en.wikipedia.org/wiki/File:BoardGameSplendorLogoFairUse.jpg#/media/File:BoardGameSplendorLogoFairUse.jpg",
+    image: "https://images.unsplash.com/photo-1627362180015-1982d196f2fd?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 7,
