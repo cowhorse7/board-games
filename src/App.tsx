@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import "./App.css";
-import Header from "./header/Header";
+import Header from "./components/Header";
 
 type Game = {
   id: number;
