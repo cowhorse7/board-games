@@ -1,0 +1,15 @@
+.header {
+  display: block;
+  background-color: green;
+  color: white;
+  width: 100%;
+}
+.heading-container {
+  display: flex;
+  flex-direction: row;
+  width: 55%;
+  justify-content: space-between;
+  align-items: center;
+  justify-self: end;
+  margin-right: 3em;
+}
