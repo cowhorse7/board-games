@@ -29,7 +29,7 @@ body {
 
 #root,
 main {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 1.2rem;
 }
@@ -42,12 +42,13 @@ header,
   margin-bottom: 1rem;
 }
 
-.profile-panel {
+.main-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  padding: 0.85rem 1rem;
   background: var(--card);
   border: 1px solid #2b3956;
   border-radius: 12px;
@@ -73,13 +74,6 @@ header,
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-header,
-.view-tabs,
-.notice,
-.game-grid {
-  margin-bottom: 1rem;
 }
 
 .profile-form input,
@@ -119,6 +113,7 @@ button.ghost {
 .view-tabs {
   display: flex;
   gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .view-tabs button {
@@ -135,6 +130,58 @@ button.ghost {
   border-color: #1fa068;
 }
 
+.search-section {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  max-width: 400px;
+  border: 1px solid #3e4f72;
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  background: #152139;
+  color: var(--text);
+  font: inherit;
+  transition: all 200ms ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0.6rem rgba(45, 157, 95, 0.3);
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+.filter-dropdown {
+  border: 1px solid #3e4f72;
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  background: #152139;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.filter-dropdown:hover,
+.filter-dropdown:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0.6rem rgba(45, 157, 95, 0.3);
+}
+
+.filter-dropdown option {
+  background: #233049;
+  color: var(--text);
+}
+
 .notice {
   padding: 0.85rem;
   border-radius: 10px;
@@ -145,7 +192,7 @@ button.ghost {
 
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, 320px);
   gap: 1rem;
 }
 
@@ -161,6 +208,7 @@ button.ghost {
   transition:
     transform 250ms ease,
     box-shadow 250ms ease;
+  max-width: 320px;
 }
 
 .game-card:hover {
