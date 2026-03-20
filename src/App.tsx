@@ -5,6 +5,7 @@ import Header from "./components/Header";
 type Game = {
   id: number;
   title: string;
+  category: string;
   players: string;
   duration: string;
   difficulty: string;
@@ -17,6 +18,7 @@ const gameData: Game[] = [
   {
     id: 1,
     title: "Catan",
+    category: "Strategy",
     players: "3-4",
     duration: "60-120 min",
     difficulty: "Medium",
@@ -28,6 +30,7 @@ const gameData: Game[] = [
   {
     id: 2,
     title: "Ticket to Ride",
+    category: "Family",
     players: "2-5",
     duration: "30-60 min",
     difficulty: "Easy",
@@ -39,6 +42,7 @@ const gameData: Game[] = [
   {
     id: 3,
     title: "Gloomhaven",
+    category: "Adventure",
     players: "1-4",
     duration: "60-120 min",
     difficulty: "Hard",
@@ -50,6 +54,7 @@ const gameData: Game[] = [
   {
     id: 4,
     title: "Azul",
+    category: "Abstract",
     players: "2-4",
     duration: "30-45 min",
     difficulty: "Easy-Medium",
@@ -61,6 +66,7 @@ const gameData: Game[] = [
   {
     id: 5,
     title: "Pandemic",
+    category: "Cooperative",
     players: "2-4",
     duration: "45-60 min",
     difficulty: "Medium",
@@ -72,6 +78,7 @@ const gameData: Game[] = [
   {
     id: 6,
     title: "Splendor",
+    category: "Strategy",
     players: "2-4",
     duration: "30 min",
     difficulty: "Easy",
@@ -83,6 +90,7 @@ const gameData: Game[] = [
   {
     id: 7,
     title: "Dominion",
+    category: "Deck-Building",
     players: "2-4",
     duration: "30 min",
     difficulty: "Medium",
@@ -94,6 +102,7 @@ const gameData: Game[] = [
   {
     id: 8,
     title: "Carcassonne",
+    category: "Tile-Laying",
     players: "2-5",
     duration: "30-45 min",
     difficulty: "Easy-Medium",
@@ -105,6 +114,7 @@ const gameData: Game[] = [
   {
     id: 9,
     title: "7 Wonders",
+    category: "Strategy",
     players: "2-7",
     duration: "45-60 min",
     difficulty: "Medium",
@@ -116,6 +126,7 @@ const gameData: Game[] = [
   {
     id: 10,
     title: "Agricola",
+    category: "Worker-Placement",
     players: "1-5",
     duration: "30-150 min",
     difficulty: "Medium",
@@ -127,6 +138,7 @@ const gameData: Game[] = [
   {
     id: 11,
     title: "Codenames",
+    category: "Party",
     players: "2-8",
     duration: "15 min",
     difficulty: "Easy",
@@ -138,6 +150,7 @@ const gameData: Game[] = [
   {
     id: 12,
     title: "Wingspan",
+    category: "Engine-Building",
     players: "1-5",
     duration: "40-60 min",
     difficulty: "Easy-Medium",
@@ -149,6 +162,7 @@ const gameData: Game[] = [
   {
     id: 13,
     title: "Everdell",
+    category: "Worker-Placement",
     players: "1-4",
     duration: "40-50 min",
     difficulty: "Easy",
@@ -160,6 +174,7 @@ const gameData: Game[] = [
   {
     id: 14,
     title: "Ticket to Ride: Europe",
+    category: "Family",
     players: "2-5",
     duration: "45-60 min",
     difficulty: "Easy",
@@ -171,6 +186,7 @@ const gameData: Game[] = [
   {
     id: 15,
     title: "One Night Ultimate Werewolf",
+    category: "Party",
     players: "3-10",
     duration: "10 min",
     difficulty: "Easy",
@@ -189,6 +205,7 @@ function App() {
   const [view, setView] = useState<"all" | "collection">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [filterType, setFilterType] = useState<"all" | "title" | "players" | "duration">("all");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const collectionGames = useMemo(
     () => gameData.filter((game) => collection.includes(game.id)),
@@ -196,10 +213,18 @@ function App() {
   );
 
   const baseGames = view === "collection" ? collectionGames : gameData;
+  const categories = useMemo(
+    () => ["All", ...Array.from(new Set(gameData.map((game) => game.category)))],
+    []
+  );
 
   const displayGames = useMemo(
     () =>
       baseGames.filter((game) => {
+        if (selectedCategory !== "All" && game.category !== selectedCategory) {
+          return false;
+        }
+
         const query = searchQuery.toLowerCase();
         if (!query) return true;
 
@@ -219,7 +244,7 @@ function App() {
             );
         }
       }),
-    [baseGames, searchQuery, filterType]
+    [baseGames, searchQuery, filterType, selectedCategory]
   );
 
   const addOrRemove = (game: Game) => {
@@ -269,6 +294,18 @@ function App() {
         </button>
       </section>
 
+      <section className="category-tabs">
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={selectedCategory === category ? "active" : ""}
+            onClick={() => setSelectedCategory(category)}
+          >
+            {category}
+          </button>
+        ))}
+      </section>
+
       <section className="search-section">
         <input
           type="text"
@@ -312,11 +349,12 @@ function App() {
                 <div className="game-title-row">
                   <h2>{game.title}</h2>
                   <span className={`badge ${isSaved ? "saved" : ""}`}>
-                    {isSaved ? "Saved" : "Fresh"}
+                    {isSaved ? "Saved" : game.category}
                   </span>
                 </div>
                 <p>{game.summary}</p>
                 <div className="game-meta">
+                  <span>{game.category}</span>
                   <span>{game.players} players</span>
                   <span>{game.duration}</span>
                   <span>{game.difficulty}</span>

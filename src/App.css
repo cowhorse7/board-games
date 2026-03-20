@@ -89,7 +89,8 @@ header,
 .game-body button,
 .detail-actions button,
 button.ghost,
-.view-tabs button {
+.view-tabs button,
+.category-tabs button {
   border: 1px solid #3e4f72;
   border-radius: 8px;
   padding: 0.55rem 0.9rem;
@@ -109,6 +110,11 @@ button.ghost,
 
 button:hover,
 .view-tabs button:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0.6rem rgba(45, 157, 95, 0.3);
+}
+
+.category-tabs button:hover {
   border-color: var(--accent);
   box-shadow: 0 0 0.6rem rgba(45, 157, 95, 0.3);
 }
@@ -135,6 +141,25 @@ button.ghost {
 }
 
 .view-tabs .active {
+  background: linear-gradient(
+    137deg,
+    rgba(45, 157, 95, 0.96),
+    rgba(74, 222, 128, 0.9)
+  );
+  color: #06101c;
+  border-color: #1fa068;
+}
+
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.category-tabs .active {
   background: linear-gradient(
     137deg,
     rgba(45, 157, 95, 0.96),
