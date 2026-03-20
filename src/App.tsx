@@ -23,7 +23,7 @@ const gameData: Game[] = [
     summary: "Settle, trade, and build your island civilization.",
     detail:
       "Players collect resources to construct roads, settlements, and cities. Balance trading with rivals and optimize development cards.",
-    image: "https://images.unsplash.com/photo-1605267545356-4cc6b36073f0?auto=format&fit=crop&w=800&q=80",
+    image: "https://www.boardgamequest.com/wp-content/uploads/2013/04/Settlers-of-Catan.jpg",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const gameData: Game[] = [
     summary: "Claim train routes across a growing map.",
     detail:
       "Connect cities with your trains, complete destination tickets, and block opponents. Simple rules with strong strategic depth.",
-    image: "https://images.unsplash.com/photo-1544918011-2d9cd7be45b4?auto=format&fit=crop&w=800&q=80",
+    image: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000077436/326d4b297eccf8fe878ccd5bf37fa4fb1ccaf580fdd3e40b3c6cca57496bf966",
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ const gameData: Game[] = [
     summary: "Campaign-driven dungeon crawl with evolving stories.",
     detail:
       "Choose heroes, build decks, manage stamina, and unlock long-term campaign rewards. High replayability and strong narrative progression.",
-    image: "https://images.unsplash.com/photo-1557264306-27624d5ecf30?auto=format&fit=crop&w=800&q=80",
+    image: "https://cephalofair.com/cdn/shop/articles/Gloomhaven_Cover_-_Title_PREFERRED_4096x.jpg?v=1685591987",
   },
   {
     id: 4,
@@ -56,7 +56,7 @@ const gameData: Game[] = [
     summary: "Draft tiles and decorate a palace wall.",
     detail:
       "Take turns drafting colored tiles, complete patterns, avoid penalties, and score points by careful planning.",
-    image: "https://images.unsplash.com/photo-1627362180015-1982d196f2fd?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/en/2/23/Picture_of_Azul_game_box.jpg",
   },
   {
     id: 5,
@@ -67,7 +67,7 @@ const gameData: Game[] = [
     summary: "Cooperative disease control around the world.",
     detail:
       "Work as a team to treat outbreaks, share knowledge, and find cures before infection spreads globally. Requires coordination and adaptability.",
-    image: "https://images.unsplash.com/photo-1507608869277-97c467914b85?auto=format&fit=crop&w=800&q=80",
+    image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/622440/header.jpg?t=1726473051",
   },
 ];
 
