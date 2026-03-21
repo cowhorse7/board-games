@@ -1,2 +1,31 @@
-/* Header component styles are handled in App.css */
+/* most Header component styles are handled in App.css */
+.dropdown-button {
+  border: none;
+  padding: 10px 12px;
+  background: #152139;
+  cursor: pointer;
+  font: inherit;
+  margin-left: 4px;
+}
 
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #152139;
+  border: 1px solid #3e4f72;
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu-item {
+  border: none;
+  display: block;
+  min-width: fit-content;
+  background: transparent;
+  padding: 1em;
+}
