@@ -8,6 +8,8 @@
   --muted: #a7b0c5;
   --accent: #2d9d5f;
   --accent-2: #4ade80;
+  --accent-3: #369e94;
+  --accent-4: #67c8b5;
   --danger: #f96b6b;
 }
 
@@ -342,9 +344,9 @@ button.ghost {
 }
 
 .action.tertiary {
-  background: #223b60;
-  color: #d8e9ff;
-  border-color: #3e6ea8;
+  background: linear-gradient(122deg, var(--accent-3), var(--accent-4));
+  color: #071020;
+  border-color: #223b60;
 }
 
 .detail-overlay {
