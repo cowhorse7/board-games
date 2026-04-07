@@ -280,6 +280,7 @@ button.ghost {
   flex-direction: column;
   gap: 0.45rem;
   min-height: 210px;
+  height: 70%;
 }
 
 .game-title-row {
