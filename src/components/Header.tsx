@@ -19,7 +19,7 @@ export default function Header({
   const [open, setOpen] = useState(false);
   return (
     <header className="main-header">
-      <h1>Board Games</h1>
+      <h1>Board Game Collector</h1>
       <div className="profile-section">
         {profileName ? (
           <>
