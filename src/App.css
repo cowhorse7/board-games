@@ -318,8 +318,13 @@ button.ghost {
   font-size: 0.78rem;
 }
 
-.action {
+.action-group {
   margin-top: auto;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.action {
   width: 100%;
 }
 
@@ -333,6 +338,12 @@ button.ghost {
   background: #1f3d2f;
   color: #b8e6d3;
   border-color: #2d5a47;
+}
+
+.action.tertiary {
+  background: #223b60;
+  color: #d8e9ff;
+  border-color: #3e6ea8;
 }
 
 .detail-overlay {

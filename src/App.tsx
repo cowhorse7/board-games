@@ -216,8 +216,9 @@ function App() {
   const [profileName, setProfileName] = useState("Cosmo");
   const [profileDraft, setProfileDraft] = useState("");
   const [collection, setCollection] = useState<number[]>([]);
+  const [wishlist, setWishlist] = useState<number[]>([]);
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
-  const [view, setView] = useState<"all" | "collection">("all");
+  const [view, setView] = useState<"all" | "collection" | "wishlist">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [filterType, setFilterType] = useState<
     "all" | "title" | "players" | "duration"
@@ -229,7 +230,17 @@ function App() {
     [collection],
   );
 
-  const baseGames = view === "collection" ? collectionGames : gameData;
+  const wishlistGames = useMemo(
+    () => gameData.filter((game) => wishlist.includes(game.id)),
+    [wishlist],
+  );
+
+  const baseGames =
+    view === "collection"
+      ? collectionGames
+      : view === "wishlist"
+        ? wishlistGames
+        : gameData;
   const categories = useMemo(
     () => [
       "All",
@@ -268,7 +279,21 @@ function App() {
   );
 
   const addOrRemove = (game: Game) => {
+    const isAddingToCollection = !collection.includes(game.id);
+
     setCollection((current) =>
+      current.includes(game.id)
+        ? current.filter((id) => id !== game.id)
+        : [...current, game.id],
+    );
+
+    if (isAddingToCollection) {
+      setWishlist((current) => current.filter((id) => id !== game.id));
+    }
+  };
+
+  const addOrRemoveWishlist = (game: Game) => {
+    setWishlist((current) =>
       current.includes(game.id)
         ? current.filter((id) => id !== game.id)
         : [...current, game.id],
@@ -284,6 +309,7 @@ function App() {
   const signOut = () => {
     setProfileName("");
     setCollection([]);
+    setWishlist([]);
     setView("all");
     setSelectedGame(null);
   };
@@ -311,6 +337,13 @@ function App() {
           disabled={!profileName}
         >
           My Collection
+        </button>
+        <button
+          className={view === "wishlist" ? "active" : ""}
+          onClick={() => setView("wishlist")}
+          disabled={!profileName}
+        >
+          Wishlist
         </button>
       </section>
 
@@ -356,6 +389,10 @@ function App() {
         <p className="notice">
           No games in your collection yet. Add some from All Games.
         </p>
+      ) : view === "wishlist" && !profileName ? (
+        <p className="notice">Create a profile first to start a wishlist.</p>
+      ) : view === "wishlist" && wishlistGames.length === 0 ? (
+        <p className="notice">No games in your wishlist yet. Add some from All Games.</p>
       ) : displayGames.length === 0 ? (
         <p className="notice">No games match your search.</p>
       ) : null}
@@ -363,6 +400,7 @@ function App() {
       <section className="game-grid">
         {displayGames.map((game) => {
           const isSaved = collection.includes(game.id);
+          const isWishlisted = wishlist.includes(game.id);
 
           return (
             <article
@@ -388,19 +426,34 @@ function App() {
                   <span>{game.duration}</span>
                   <span>{game.difficulty}</span>
                 </div>
-                <button
-                  className={`action ${isSaved ? "secondary" : "primary"}`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (profileName) {
-                      addOrRemove(game);
-                    } else {
-                      alert("Create a profile to save games.");
-                    }
-                  }}
-                >
-                  {isSaved ? "Remove from Collection" : "Add to Collection"}
-                </button>
+                <div className="action-group">
+                  <button
+                    className={`action ${isSaved ? "secondary" : "primary"}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (profileName) {
+                        addOrRemove(game);
+                      } else {
+                        alert("Create a profile to save games.");
+                      }
+                    }}
+                  >
+                    {isSaved ? "Remove from Collection" : "Add to Collection"}
+                  </button>
+                  <button
+                    className={`action ${isWishlisted ? "secondary" : "tertiary"}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (profileName) {
+                        addOrRemoveWishlist(game);
+                      } else {
+                        alert("Create a profile to save games.");
+                      }
+                    }}
+                  >
+                    {isWishlisted ? "Remove from Wishlist" : "Add to Wishlist"}
+                  </button>
+                </div>
               </div>
             </article>
           );
@@ -429,12 +482,30 @@ function App() {
                 <button
                   className="primary"
                   onClick={() => {
-                    addOrRemove(selectedGame);
+                    if (profileName) {
+                      addOrRemove(selectedGame);
+                    } else {
+                      alert("Create a profile to save games.");
+                    }
                   }}
                 >
                   {collection.includes(selectedGame.id)
                     ? "Remove from Collection"
                     : "Add to Collection"}
+                </button>
+                <button
+                  className="tertiary"
+                  onClick={() => {
+                    if (profileName) {
+                      addOrRemoveWishlist(selectedGame);
+                    } else {
+                      alert("Create a profile to save games.");
+                    }
+                  }}
+                >
+                  {wishlist.includes(selectedGame.id)
+                    ? "Remove from Wishlist"
+                    : "Add to Wishlist"}
                 </button>
               </div>
             </div>
