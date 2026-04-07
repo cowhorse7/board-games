@@ -377,7 +377,7 @@ function App() {
               <div className="game-body">
                 <div className="game-title-row">
                   <h2>{game.title}</h2>
-                  <span className={`badge ${isSaved ? "saved" : ""}`}>
+                  <span className="badge">
                     {game.category}
                   </span>
                 </div>

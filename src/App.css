@@ -302,11 +302,6 @@ button.ghost {
   color: #b8e6d3;
 }
 
-.badge.saved {
-  background: linear-gradient(90deg, #2d9d5f, #4ade80);
-  color: #061022;
-}
-
 .game-body p {
   color: #dce2f6;
   margin: 0;
