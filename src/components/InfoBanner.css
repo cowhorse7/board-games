@@ -1,0 +1,23 @@
+.info-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #232d43;
+  margin-bottom: 2rem;
+  padding-block: 0.25rem;
+  padding-inline: 3rem 1rem;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.banner-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: rgb(218, 218, 218);
+}
+
+.banner-close:hover {
+  color: #707070;
+}

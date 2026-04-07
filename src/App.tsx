@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
+import InfoBanner from "./components/InfoBanner";
 
 type Game = {
   id: number;
@@ -323,6 +324,7 @@ function App() {
         onCreateProfile={createProfile}
         onSignOut={signOut}
       />
+      <InfoBanner />
 
       <section className="view-tabs">
         <button
@@ -392,7 +394,9 @@ function App() {
       ) : view === "wishlist" && !profileName ? (
         <p className="notice">Create a profile first to start a wishlist.</p>
       ) : view === "wishlist" && wishlistGames.length === 0 ? (
-        <p className="notice">No games in your wishlist yet. Add some from All Games.</p>
+        <p className="notice">
+          No games in your wishlist yet. Add some from All Games.
+        </p>
       ) : displayGames.length === 0 ? (
         <p className="notice">No games match your search.</p>
       ) : null}
@@ -415,9 +419,7 @@ function App() {
               <div className="game-body">
                 <div className="game-title-row">
                   <h2>{game.title}</h2>
-                  <span className="badge">
-                    {game.category}
-                  </span>
+                  <span className="badge">{game.category}</span>
                 </div>
                 <p>{game.summary}</p>
                 <div className="game-meta">
