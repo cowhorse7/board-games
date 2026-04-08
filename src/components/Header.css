@@ -29,3 +29,14 @@
   background: transparent;
   padding: 1em;
 }
+
+.logo-holder {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-icon {
+  width: 80px;
+  height: 80px;
+}

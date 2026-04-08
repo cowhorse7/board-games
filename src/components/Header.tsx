@@ -19,6 +19,9 @@ export default function Header({
   const [open, setOpen] = useState(false);
   return (
     <header className="main-header">
+      <div className="logo-holder">
+        <img src="/BGC_icon.png" alt="BGC Icon" className="header-icon" />
+      </div>
       <h1>Board Game Collector</h1>
       <div className="profile-section">
         {profileName ? (
